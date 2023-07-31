@@ -1,0 +1,83 @@
+Summary of all functions that we are using during Ca analysis pipeline
+
+Ca_open_data.py
+	def OpenTraces(directory, file):
+		#Open the IDAS DataFrame and save cell traces in numpy format
+	def make_3darray(cells: np.array, reaches: pd.DataFrame, window=80):
+		#Make the tensor-3dimensional array with Ncells x Timepoints x Trials 
+    		# The returned 'tensor' can be adressed by any dimension to get one trial or one cells
+   		# Example: cell_tensor[:,:,0] gives you all cell traces in the first trial
+    		# cell_tensor[0,:,:] gives you traces in all trials for the first cell
+	def make_3darray_missed(cells: np.array, reaches: pd.DataFrame, window=80):
+		#Make the tensor-3dimensional array with Ncells x Timepoints x Missed Trials 
+	def make_3darray_grasped(cells: np.array, reaches: pd.DataFrame, window=80):
+		#Make the tensor-3dimensional array with Ncells x Timepoints x Grasped Trials
+	def z_score_data(cells: np.array):
+    		#make a z-scored copy of data
+	def max_score_data(cells: np.array):    
+   		 #make a max-scored copy of data
+	def filter_data(cells: np.array, length1=199, length2=5):
+    		#make a cleared copy of data with removed median trace and smoothing
+
+
+Ca_plot_data.py
+	def raw_plot(Ca: np.array)		
+# Plot the accepted Cells
+	def raw_plot_all(Ca: np.array, reaches: pd.DataFrame, mark='insc_peak')  
+# Plot the accepted Cells with marks for reach onsets
+def raw_plot_triggers(Ca: pd.DataFrame, reaches: pd.DataFrame)
+		# Plot the accepted Cells with marks for reach onsets and triggers
+	def raw_plot_category(cells: np.array, reaches: pd.DataFrame, mark='Grasped')
+		# Plot the accepted Cells with marks for only reinforced reaches
+	def raw_plot_mean(cells: np.array, reaches: pd.DataFrame, mark='Grasped')
+		# Add the Mean Trace and plot it along the others
+	def trials_plot_all(Ca: np.array, reaches: pd.DataFrame, mark='insc_peak'):
+		#Plot the Mean population level activity aligned to the event
+	def trials_plot_one(Ca: np.array, reaches: pd.DataFrame, cell=0, mark='insc_peak'):
+		#Plot the Single Cell level activity aligned to the event
+	def trials_spikes_all(spikes: np.array, raster=False):
+		# Plot the Spikes in all trials (data should be in the form of tensor)
+	def one_trial_all(Ca: np.array, reaches: pd.DataFrame):
+		# Plot all cells activity in a single trial (data should be in the form of tensor)
+	def plot_mean(arr: np.array):
+		# Plot all cells in a big dataset aligned from tensor (Single trial_cells X window length)
+def plot_scatterbox(spikes1: np.array, spikes2: np.array, plot='sum', yaxis='Events per minute', labels=['PT cells','IT cells'])
+		# Plot two sets of parameters as a boxplot + scatterplot+output basic stats
+	def spike_parameters(spikes_data: tuple)
+		# Plot all the parameters of the Ca events (events should be in a form of tuple)
+def plot_correlation(corr = np.array, diagonal=True, mask=False, annot=False, Vmin=0, Vmax=0.25):        
+    		#Plot the correlation as a triange seaborn matrix
+	def plot_distances(data: np.array):
+		#Plot the correlation matrix with distances
+	def plot_ccs(cell1: np.array, cell2: np.array):
+    		# Plot the cross-correlation between two traces
+   		 # Input: two cell traces
+	
+
+Ca_event_detection.py
+	def detect_events_caiman(cells: np.array, p=1, s_min = 0)
+		# Deconvolution using the OASIS built-in in CaImAn package
+	def detect_events(cells: np.array, sd = 2, wid = 10 , dist = 6)
+		# Finding the Calcium events simply by thresholding
+	def correlation_cells(data: np.array):
+    		# Calculating Pearson's correlation
+	# From old MESMERIZE package
+# https://github.com/kushalkolar/MESmerize/blob/master/mesmerize/analysis/math/
+cross_correlation.py
+# @author: kushal
+
+def ncc_c(x: np.ndarray, y: np.ndarray) -> np.ndarray:
+def get_omega(x: np.ndarray = None, y: np.ndarray = None, cc: np.ndarray = None) -> int:
+def get_lag(x: np.ndarray = None, y: np.ndarray = None, cc: np.ndarray = None) -> float:
+def get_epsilon(x: np.ndarray = None, y: np.ndarray = None, cc: np.ndarray = None) -> float:
+def get_lag_matrix(curves: np.ndarray = None, ccs: np.ndarray = None) -> np.ndarray:
+def get_epsilon_matrix(curves: np.ndarray = None, ccs: np.ndarray = None) -> np.ndarray:
+def _compute_from_ccs(ccs: np.ndarray, func: callable) -> np.ndarray:
+def compute_ccs(a: np.ndarray) -> np.ndarray:
+def compute_cc_data(curves: np.ndarray):
+
+def asymmetric_correlation(vec1, vec2):     #formula for Jaccard similarity
+def compute_asymmetric(a: np.ndarray) -> np.ndarray:
+
+def spike_to_txt(directory, Spike_array):
+    	#Saving the numpy array for raster plots
