@@ -23,21 +23,21 @@ Here is the description of methods used in the simplified Ca_Analysis-Spontaneou
 ![plot](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Ca_signal_spontaneous.png)
 
 And a few results from this pipeline allowing to 
-### Visualize the raw signal
+### Visualize the raw signal (Plot the whole recording)
 
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Raw_signal.png?raw=true)
 
-### Perform the event detection
+### Perform the event detection (Detect and analyze the peaks)
 
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Event_detection.png?raw=true)
 
 
-### Visualize the basic parameters for the detected Ca events
+### Visualize the basic parameters for the detected Ca events (Plot the peak parameters)
 
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Basic_parameters.png?raw=true)
 
 
-### And correlaton matrix between cells
+### And correlaton matrix between cells (Calculate and plot asymmetric correlation)
 
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Correlation_visualization.png?raw=true)
 
