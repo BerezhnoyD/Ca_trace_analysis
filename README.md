@@ -19,7 +19,7 @@ Here is the visualisation of the whole pipeline stored in multiple toolboxes:
 
 Here is the description of methods used in the simplified Ca_Analysis-Spontaneous_Activity Notebook:
 
-![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/edit/main/pictures/Ca_signal_spontaneous.png?raw=true)
+![plot](https://github.com/BerezhnoyD/Ca_trace_analysis/edit/main/pictures/Ca_signal_spontaneous.png)
 
 And a few results from this pipeline allowing to visualize the raw signal
 
