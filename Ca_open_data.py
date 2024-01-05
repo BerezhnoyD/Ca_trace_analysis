@@ -29,7 +29,7 @@ def open_traces(directory, file):
     
     Ca_df=pd.read_csv(directory+file, header=1, sep=', ', dtype=np.float32, engine='python')
     Ca_cells=pd.read_csv(directory+file[:-4]+'-props.csv', header=0, sep=',', engine='python')
-    image = imageio.imread(directory + file[:-4]+'_map.tif')
+    image = imageio.imread(directory + file[:-4]+'-map.tif')
 
     Ca_cells = Ca_cells.loc[Ca_cells['Status']=='accepted']
     Ca_cells.drop(columns=['Name','Status','NumComponents','Size','ActiveSegment0'], inplace=True)
@@ -50,6 +50,7 @@ def open_traces(directory, file):
     return Ca_df, Ca_cells, Ca, image
 
 def split_cellset(cells: np.array, props: pd.DataFrame):
+    
     n = props.loc[props['Red']>1].index.shape[0]
     list1 = props.loc[props['Red']>1].index
     list2 = props.loc[props['Red']==0].index
