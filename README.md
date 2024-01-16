@@ -22,7 +22,13 @@ Here is the description of methods used in the simplified Ca_Analysis-Spontaneou
 
 ![plot](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Ca_signal_spontaneous.png)
 
-And a few results from this pipeline allowing to 
+All of the functions for this notebook are contained in the toolboxes above. The notebook should lead you through
+opening the data (by now the function supports only the data from Inscopix data processing software as csv table or
+the data processed by CaImAn package), plotting the traces for quality control, detecting Ca events and plotting
+the basic parameters for the peaks. Ca_population_metrics is not used at this point and contains more advances analysis
+functions.
+
+Here are the few results from this pipeline allowing to 
 ### Visualize the raw signal (Plot the whole recording)
 
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Raw_signal.png?raw=true)
@@ -42,8 +48,9 @@ And a few results from this pipeline allowing to
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Correlation_visualization.png?raw=true)
 
 
-## Secondary analyses overwiev
-The whole toolbox allows to perform many more secondary analyses and the documentation on them is yet to come
+## Secondary analyses overview
+The whole toolbox allows to perform many more secondary analyses and the documentation on them is yet to come. Most
+of the functions for this part are containde in Ca_population_metrics toolbox.
 
 ![alt text](https://github.com/BerezhnoyD/Ca_trace_analysis/blob/main/pictures/Ca_signal_overview.png?raw=true)
 
